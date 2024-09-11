@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Calculator</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<section class="calculator">
+			<div class="inner-wrapper card_and_kasko">
+				<div>
+					<div class="card">
+						<div class="card_tabs">
+							<div class="card_type_motorcycle">
+								<h4 class="card_tab_name">Тип мотоцикла</h4>
+								<form>
+									<select class="card_tab" id="type_motorcycle" name="type_motorcycle">
+										<option value="Touring">Touring</option>
+										<option value="Touring-2">Touring-2</option>
+									</select>
+								</form>
+							</div>
+							<div class="card_model_motorcycle">
+								<h4 class="card_tab_name">Модель</h4>
+								<form>
+									<select class="card_tab" id="model_motorcycle" name="model_motorcycle">
+										<option value="TRK 251">TRK 251</option>
+										<option value="TRK 251-2">TRK 251-2</option>
+									</select>
+								</form>
+							</div>
+							<div class="card_color_motorcycle">
+								<h4 class="card_tab_name">Цвет</h4>
+								<form>
+									<select class="card_tab" id="color_motorcycle" name="color_motorcycle">
+										<option value="white">Белый глянцевый</option>
+										<option value="black">Черный глянцевый</option>
+									</select>
+								</form>
+							</div>
+						</div>
+
+						<div class="card_image">
+							<img class="card_img_motorcycle" src="./Photo.png" alt="Мотоцикл" />
+						</div>
+					</div>
+
+					<div class="kasko">
+						<div class="kasko_title">
+							<h3 class="kasko_title_text">Расчет каско</h3>
+						</div>
+						<div class="kasko_input">
+							<input class="kasko_input_text" type="text" id="experience" name="experience" placeholder="Введите стаж по категории А" />
+							<div class="card_info_text">
+								<p class="calculation_text">Стоимость каско</p>
+								<p class="calculation_text">0 руб.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="payment_calculation">
+					<div class="button_tab">
+						<button class="button_tab_text">Рассрочка</button>
+						<button class="button_tab_text">Кредит</button>
+					</div>
+					<div class="tabs_and_info">
+						<div class="card_tabs">
+							<div class="card_term">
+								<h4 class="card_tab_name">Срок</h4>
+								<form>
+									<select class="card_tab" id="term" name="term">
+										<option value="8">8 месяцев</option>
+										<option value="9">9 месяцев</option>
+									</select>
+								</form>
+							</div>
+							<div class="card_payment">
+								<h4 class="card_tab_name">Первоначальный взнос</h4>
+								<form>
+									<select class="card_tab" id="payment" name="payment">
+										<option value="50">50%</option>
+										<option value="60">60%</option>
+									</select>
+								</form>
+							</div>
+						</div>
+						<div class="card_calculation">
+							<h3 class="card_calculation_title">Расчет платежа</h3>
+							<div class="calculator_info_text">
+								<div class="card_info_text">
+									<p class="calculation_text">Стоимость мотоцикла</p>
+									<p class="calculation_text">0 руб.</p>
+								</div>
+								<div class="card_info_text">
+									<p class="calculation_text">Сумма рассрочки</p>
+									<p class="calculation_text">0 руб.</p>
+								</div>
+								<div class="card_info_text">
+									<p class="calculation_text">Ежемесячный платеж</p>
+									<p class="calculation_text">0 руб.</p>
+								</div>
+								<div class="card_info_text">
+									<p class="calculation_text">Сумма предоплаты</p>
+									<p class="calculation_text">0 руб.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="line"></div>
+
+					<div class="info">
+						<p class="info_text">
+							Поддержку продаж в&nbsp;рассрочку и&nbsp;кредит осуществляет компания TAMIN Sport (ООО &laquo;Тамингрупп&raquo;) совместно с&nbsp;АО&nbsp;&laquo;ОТП Банк&raquo; ( Генеральная лицензия на&nbsp;осуществление банковских операций &#8470;&nbsp;2766), КБ&nbsp;&laquo;Ренессанс Кредит&raquo; (ООО) (Лицензия Банка России &#8470;&nbsp;3354), АО&nbsp;&laquo;Кредит Европа Банк (Россия)&raquo; (Генеральная лицензия на&nbsp;осуществление банковских операций &#8470;&nbsp;3311), Банк ВТБ (ПАО) (Генеральная лицензия Банка России &#8470;&nbsp;1000), АО&nbsp;&laquo;Почта Банк&raquo; (Генеральная лицензия Банка России на&nbsp;осуществление банковских операций &#8470;&nbsp;650). Общие условия кредитования: возраст от&nbsp;18&nbsp;лет, возраст не&nbsp;должен превышать 70&nbsp;лет
+							на&nbsp;дату возврата кредита; постоянное место работы, (на&nbsp;настоящем месте) не&nbsp;менее 3х&nbsp;месяцев. Порядок погашения кредита: ежемесячно аннуитетными платежами, включающими сумму основного долга и&nbsp;проценты. Банки оставляют за&nbsp;собой право отказать в&nbsp;выдаче кредита без объяснения причин. *Программа рассрочки и&nbsp;льготного кредита совместно с&nbsp;дистрибьютором мотоциклов BENELLI и&nbsp;QJMOTOR является маркетинговой и&nbsp;достигается за&nbsp;счет уменьшения стоимости приобретаемой техники на&nbsp;разницу между суммой начисленных процентов по&nbsp;стандартной кредитной ставке банка и&nbsp;суммой процентов, начисленных по&nbsp;маркетинговой процентной ставке. Не&nbsp;является публичной офертой.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const buttons = document.querySelectorAll(".button_tab_text");
+
+				buttons.forEach((button) => {
+					button.addEventListener("click", function () {
+						buttons.forEach((btn) => btn.classList.remove("active"));
+						this.classList.add("active");
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
