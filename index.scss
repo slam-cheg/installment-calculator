@@ -1,3 +1,8 @@
+$hor-tablet: 1199px;
+$ver-tablet: 959px;
+$hor-mobile: 639px;
+$ver-mobile: 479px;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,6 +28,10 @@ img {
     background-color: #F8F8F8;
     border: 1px solid #DDDDDD;
     padding: 30px;
+
+    @media screen and (max-width: $hor-tablet) {
+        padding: 30px;
+    }
 
     &_info_text {
         display: flex;
