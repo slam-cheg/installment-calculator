@@ -43,12 +43,19 @@ img {
 .calculator {
     background-color: #F8F8F8;
     border: 1px solid #DDDDDD;
+    padding: 30px;
 }
 
 .inner-wrapper {
     width: 1160px;
     margin: 0 auto;
     position: relative;
+}
+
+.left_column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
 }
 
 .card_and_kasko {
@@ -59,13 +66,10 @@ img {
 .card {
     display: flex;
     column-gap: 30px;
-    padding: 30px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 20px;
+    padding: 30px; 
     background-color: #FFFFFF;
-    min-width: 540px;
-    min-height: 250px;
+    width: auto; 
+    height: auto; 
 }
 
 .card_tabs {
@@ -105,16 +109,14 @@ img {
 }
 
 .kasko {
-    min-width: 540px;
-    min-height: 134px;
     background-color: #FFFFFF;
-    padding: 30px;
+    padding: 30px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    width: auto; 
+    height: auto; 
 }
 
 .kasko_title {
@@ -141,7 +143,6 @@ img {
     width: 100%;
 }
 
-
 .kasko_input_text {
     min-width: 225px;
     min-height: 40px;
@@ -151,7 +152,6 @@ img {
     padding: 5px;
     box-sizing: border-box;
 }
-
 
 .card_info_text {
     display: flex;
@@ -169,13 +169,11 @@ img {
 }
 
 .payment_calculation {
-    margin-top: 30px;
-    margin-right: 30px;
-    min-width: 540px;
-    min-height: 404px;
     background-color: #FFFFFF;
     padding: 30px;
     box-sizing: border-box;
+    width: auto; 
+    height: auto; 
 }
 
 .button_tab {
@@ -185,8 +183,8 @@ img {
 }
 
 .button_tab_text {
-    min-width: 235px;
-    min-height: 50px;
+    width: 50%;
+    padding-block: 16px;
     background: #FFFFFF;
     border: 1px solid #4D4C4C;
     font-size: 16px;
@@ -198,24 +196,40 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button_tab_text:hover {
+    background: #177E3F;
+    border: 1px solid #4D4C4C;
+    color: #FFFFFF;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
 }
 
 .button_tab_text.active {
     background: #177E3F;
     border: 1px solid #4D4C4C;
     color: #FFFFFF;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: auto;
 }
 
 .tabs_and_info {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     gap: 65px;
+}
+
+.tabs_and_info_credit {
+    display: none; 
+    gap: 65px;
+    margin-bottom: 20px;
 }
 
 .card_calculation {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
     width: 100%;
 }
 
@@ -235,16 +249,13 @@ img {
 
 .line {
     border: 1px solid #DDDDDD;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.info {
-    margin-bottom: 30px;
-}
-
-.info_text {
-    font-size: 12px;
+.disclamer {
+    font-size: 9px;
     font-weight: 400;
-    line-height: 15.6px;
+    line-height: 1;
+    opacity: 0.5;
     text-align: left;
 }
