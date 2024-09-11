@@ -29,10 +29,6 @@ img {
     border: 1px solid #DDDDDD;
     padding: 30px;
 
-    @media screen and (max-width: $hor-tablet) {
-        padding: 30px;
-    }
-
     &_info_text {
         display: flex;
         flex-direction: column;

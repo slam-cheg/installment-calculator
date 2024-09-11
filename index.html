@@ -43,7 +43,7 @@
 							</div>
 
 							<div class="card_image">
-								<img class="card_img_motorcycle" src="https://static.tildacdn.com/tild3936-3733-4530-b765-333635313736/black.jpg" alt="Мотоцикл" />
+								<img class="card_img_motorcycle" data-current-model="leoncino500" src="https://static.tildacdn.com/tild3936-3733-4530-b765-333635313736/black.jpg" alt="Мотоцикл" />
 							</div>
 						</div>
 
@@ -75,6 +75,9 @@
 										<select class="card_tab" id="term" name="term">
 											<option value="8">8 месяцев</option>
 											<option value="9">9 месяцев</option>
+											<option value="10">10 месяцев</option>
+											<option value="11">11 месяцев</option>
+											<option value="12">12 месяцев</option>
 										</select>
 									</form>
 								</div>
@@ -96,20 +99,21 @@
 								<div class="calculator_info_text">
 									<div class="card_info_text">
 										<p class="calculation_text">Стоимость мотоцикла</p>
-										<p class="calculation_text">0 руб.</p>
-									</div>
-									<div class="card_info_text">
-										<p class="calculation_text">Сумма рассрочки</p>
-										<p class="calculation_text">0 руб.</p>
-									</div>
-									<div class="card_info_text">
-										<p class="calculation_text">Ежемесячный платеж</p>
-										<p class="calculation_text">0 руб.</p>
+										<p class="calculation_text" id="moto-price">595000 руб.</p>
 									</div>
 									<div class="card_info_text">
 										<p class="calculation_text">Сумма предоплаты</p>
-										<p class="calculation_text">0 руб.</p>
+										<p class="calculation_text" id="first-payment">59500 руб.</p>
 									</div>
+									<div class="card_info_text">
+										<p class="calculation_text">Сумма рассрочки</p>
+										<p class="calculation_text" id="installment-total">535500 руб.</p>
+									</div>
+									<div class="card_info_text">
+										<p class="calculation_text">Ежемесячный платеж</p>
+										<p class="calculation_text" id="monthly-payment">66938 руб.</p>
+									</div>
+
 								</div>
 							</div>
 						</div>

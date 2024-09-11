@@ -24,11 +24,6 @@ img {
   border: 1px solid #DDDDDD;
   padding: 30px;
 }
-@media screen and (max-width: 1199px) {
-  .calculator {
-    padding: 30px;
-  }
-}
 .calculator_info_text {
   display: flex;
   flex-direction: column;
