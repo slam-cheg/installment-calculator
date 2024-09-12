@@ -55,7 +55,7 @@
 								<input class="kasko_input_text" type="number" id="experience" name="experience" placeholder="Введите стаж по категории А" maxlength="2"/>
 								<div class="card_info_text">
 									<p class="calculation_text">Стоимость каско</p>
-									<p class="calculation_text">0 руб.</p>
+									<p class="calculation_text" id="kaskoPrice">0 руб.</p>
 								</div>
 							</div>
 						</div>
@@ -63,35 +63,62 @@
 
 					<div class="payment_calculation">
 						<div class="button_tab">
-							<button class="button_tab_text active">Рассрочка</button>
-							<button class="button_tab_text">Кредит</button>
+							<button class="button_tab_text active" id="installment-tab">Рассрочка</button>
+							<button class="button_tab_text" id="credit-tab">Кредит</button>
 						</div>
 
 						<div class="tabs_and_info">
 							<div class="card_tabs">
-								<div class="card_term">
-									<h4 class="card_tab_name">Срок</h4>
-									<form>
-										<select class="card_tab" id="term" name="term">
-											<option value="8">8 месяцев</option>
-											<option value="9">9 месяцев</option>
-											<option value="10">10 месяцев</option>
-											<option value="11">11 месяцев</option>
-											<option value="12">12 месяцев</option>
-										</select>
-									</form>
+								<div id="installment-form" class="form form_active">
+									<div class="card_term">
+										<h4 class="card_tab_name">Срок</h4>
+										<form>
+											<select class="card_tab" id="term" name="term">
+												<option value="8">8 месяцев</option>
+												<option value="9">9 месяцев</option>
+												<option value="10">10 месяцев</option>
+												<option value="11">11 месяцев</option>
+												<option value="12">12 месяцев</option>
+											</select>
+										</form>
+									</div>
+									<div class="card_payment">
+										<h4 class="card_tab_name">Первоначальный взнос</h4>
+										<form>
+											<select class="card_tab" id="payment" name="payment">
+												<option value="10">10%</option>
+												<option value="20">20%</option>
+												<option value="30">30%</option>
+												<option value="40">40%</option>
+												<option value="50">50%</option>
+											</select>
+										</form>
+									</div>
 								</div>
-								<div class="card_payment">
-									<h4 class="card_tab_name">Первоначальный взнос</h4>
-									<form>
-										<select class="card_tab" id="payment" name="payment">
-											<option value="10">10%</option>
-											<option value="20">20%</option>
-											<option value="30">30%</option>
-											<option value="40">40%</option>
-											<option value="50">50%</option>
-										</select>
-									</form>
+								<div id="credit-form" class="form">
+									<div class="card_term">
+										<h4 class="card_tab_name">Срок</h4>
+										<form>
+											<select class="card_tab" id="term" name="term">
+												<option value="12">12 месяцев</option>
+												<option value="24">24 месяца</option>
+												<option value="36">36 месяцев</option>
+											</select>
+										</form>
+									</div>
+									<div class="card_payment">
+										<h4 class="card_tab_name">Первоначальный взнос</h4>
+										<form>
+											<select class="card_tab" id="payment" name="payment">
+											    <option value="0">0%</option>
+												<option value="10">10%</option>
+												<option value="20">20%</option>
+												<option value="30">30%</option>
+												<option value="40">40%</option>
+												<option value="50">50%</option>
+											</select>
+										</form>
+									</div>
 								</div>
 							</div>
 							<div class="card_calculation">
@@ -99,19 +126,19 @@
 								<div class="calculator_info_text">
 									<div class="card_info_text">
 										<p class="calculation_text">Стоимость мотоцикла</p>
-										<p class="calculation_text" id="moto-price">595000 руб.</p>
+										<p class="calculation_text" id="moto-price"><span>595 000</span> руб.</p>
 									</div>
 									<div class="card_info_text">
 										<p class="calculation_text">Сумма предоплаты</p>
-										<p class="calculation_text" id="first-payment">59500 руб.</p>
+										<p class="calculation_text" id="first-payment"><span>59 500</span> руб.</p>
 									</div>
 									<div class="card_info_text">
 										<p class="calculation_text">Сумма рассрочки</p>
-										<p class="calculation_text" id="installment-total">535500 руб.</p>
+										<p class="calculation_text" id="installment-total"><span>535 500</span> руб.</p>
 									</div>
 									<div class="card_info_text">
 										<p class="calculation_text">Ежемесячный платеж</p>
-										<p class="calculation_text" id="monthly-payment">66938 руб.</p>
+										<p class="calculation_text" id="monthly-payment"><span>66 938</span> руб.*</p>
 									</div>
 
 								</div>
