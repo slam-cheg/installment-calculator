@@ -18,11 +18,39 @@ img {
   position: relative;
   font-family: "Myriad Pro", sans-serif;
 }
+@media screen and (max-width: 1199px) {
+  .inner-wrapper {
+    max-width: 940px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .inner-wrapper {
+    max-width: 620px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .inner-wrapper {
+    max-width: 460px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .inner-wrapper {
+    max-width: 300px;
+  }
+}
 
 .calculator {
   background-color: #F8F8F8;
   border: 1px solid #DDDDDD;
   padding: 30px;
+}
+.calculator .form {
+  display: none;
+}
+.calculator .form_active {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
 }
 @media screen and (max-width: 1199px) {
   .calculator {
@@ -509,4 +537,4 @@ img {
     font-size: 20px;
     line-height: 20px;
   }
-}/*# sourceMappingURL=index.css.map */
+}

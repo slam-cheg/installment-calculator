@@ -23,12 +23,35 @@ img {
     margin: 0 auto;
     position: relative;
     font-family: 'Myriad Pro', sans-serif;
+
+    @media screen and (max-width: $hor-tablet) {
+		max-width: 940px;
+	}
+	@media screen and (max-width: $ver-tablet) {
+		max-width: 620px;
+	}
+	@media screen and (max-width: $hor-mobile) {
+		max-width: 460px;
+	}
+	@media screen and (max-width: $ver-mobile) {
+		max-width: 300px;
+	}
 }
 
 .calculator {
     background-color: #F8F8F8;
     border: 1px solid #DDDDDD;
     padding: 30px;
+
+    .form {
+        display: none;
+    }
+    
+    .form_active {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+    }
 
     @media screen and (max-width: $hor-tablet) {
         padding: 30px;
