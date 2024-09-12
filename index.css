@@ -107,58 +107,6 @@ img {
 .card_tab {
   width: 100%;
 }
-.card_tabs {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-@media screen and (max-width: 959px) {
-  .card_tabs {
-    row-gap: 20px;
-  }
-}
-@media screen and (max-width: 639px) {
-  .card_tabs {
-    row-gap: 20px;
-  }
-}
-.card_image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card_img_motorcycle {
-  min-width: 270px;
-  min-height: 190px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card_tab_name {
-  font-family: "Myriad Pro", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  text-align: left;
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 959px) {
-  .card_tab_name {
-    font-size: 18px;
-    line-height: 18px;
-  }
-}
-@media screen and (max-width: 639px) {
-  .card_tab_name {
-    font-size: 16px;
-    line-height: 1.2;
-  }
-}
-@media screen and (max-width: 479px) {
-  .card_tab_name {
-    font-size: 16px;
-    line-height: 1.2;
-  }
-}
 .card_tab {
   min-width: 180px;
   min-height: 30px;
@@ -179,13 +127,47 @@ img {
 @media screen and (max-width: 639px) {
   .card_tab {
     line-height: 1.2;
-    min-height: 60px;
   }
 }
-@media screen and (max-width: 479px) {
-  .card_tab {
+.card_tabs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+@media screen and (max-width: 959px) {
+  .card_tabs {
+    row-gap: 20px;
+  }
+}
+.card_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card_img_motorcycle {
+  min-width: 270px;
+  min-height: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card_tab_name {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 959px) {
+  .card_tab_name {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .card_tab_name {
+    font-size: 16px;
     line-height: 1.2;
-    min-height: 60px;
   }
 }
 .card_info_text {
@@ -203,7 +185,7 @@ img {
 .card_calculation_title {
   font-size: 14px;
   font-weight: 600;
-  line-height: 14px;
+  line-height: 1;
   text-align: left;
   margin-bottom: 12px;
 }
@@ -221,7 +203,6 @@ img {
 @media screen and (max-width: 479px) {
   .card_calculation_title {
     font-size: 16px;
-    line-height: 1.2;
   }
 }
 @media screen and (max-width: 959px) {
@@ -259,7 +240,7 @@ img {
 .kasko_title_text {
   font-size: 14px;
   font-weight: 600;
-  line-height: 14px;
+  line-height: 1;
   text-align: left;
   text-transform: uppercase;
 }
@@ -267,13 +248,6 @@ img {
   .kasko_title_text {
     font-size: 18px;
     line-height: 1.2;
-  }
-}
-@media screen and (max-width: 639px) {
-  .kasko_title_text {
-    font-size: 18px;
-    line-height: 1.2;
-    margin-bottom: 28px;
   }
 }
 .kasko_input {
@@ -315,7 +289,6 @@ img {
     font-size: 16px;
     line-height: 1.2;
     width: 100%;
-    padding: 0 10px;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -350,7 +323,7 @@ img {
 .calculation_text {
   font-size: 14px;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 1;
   text-align: left;
 }
 @media screen and (max-width: 959px) {
@@ -360,7 +333,6 @@ img {
 }
 @media screen and (max-width: 639px) {
   .calculation_text {
-    font-size: 18px;
     line-height: 1.2;
   }
 }
@@ -406,7 +378,7 @@ img {
   border: 1px solid #4D4C4C;
   font-size: 16px;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1;
   text-align: center;
   color: #4D4C4C;
   text-transform: uppercase;
@@ -434,23 +406,19 @@ img {
   .button_tab_text {
     width: 100%;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 1;
     padding-block: 20px;
   }
 }
 @media screen and (max-width: 639px) {
   .button_tab_text {
     width: 100%;
-    font-size: 18px;
     line-height: 1.2;
-    padding-block: 22px;
   }
 }
 @media screen and (max-width: 479px) {
   .button_tab_text {
     font-size: 16px;
-    line-height: 1.2px;
-    padding-block: 30px;
   }
 }
 @media screen and (max-width: 959px) {
@@ -478,7 +446,6 @@ img {
 }
 .tabs_and_info_credit {
   display: none;
-  gap: 65px;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 1199px) {
@@ -499,11 +466,6 @@ img {
   border: 1px solid #DDDDDD;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 959px) {
-  .line {
-    margin-bottom: 20px;
-  }
-}
 
 .disclamer {
   font-size: 8.5px;
@@ -512,20 +474,3 @@ img {
   opacity: 0.5;
   text-align: left;
 }
-@media screen and (max-width: 959px) {
-  .disclamer {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 639px) {
-  .disclamer {
-    font-size: 12px;
-    line-height: 1.2;
-  }
-}
-@media screen and (max-width: 479px) {
-  .disclamer {
-    font-size: 12px;
-    line-height: 1.2;
-  }
-}/*# sourceMappingURL=index.css.map */

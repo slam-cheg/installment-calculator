@@ -106,16 +106,33 @@ img {
         width: 100%;
     }
 
+    &_tab {
+        min-width: 180px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        background: #F8F8F8;
+        border-radius: 3px;
+        border: 1px solid #DDDDDD;
+        outline: none;
+
+        @media screen and (max-width: $ver-tablet) {
+            font-size: 14px;
+            min-height: 40px;
+            padding: 0 10px;
+        }
+
+        @media screen and (max-width: $hor-mobile) {
+            line-height: 1.2;
+        }
+    }
+
     &_tabs {
         display: flex;
         flex-direction: column;
         row-gap: 20px;
 
         @media screen and (max-width: $ver-tablet) {
-            row-gap: 20px;
-        }
-
-        @media screen and (max-width: $hor-mobile) {
             row-gap: 20px;
         }
     }
@@ -136,7 +153,7 @@ img {
         font-family: 'Myriad Pro', sans-serif;
         font-size: 12px;
         font-weight: 400;
-        line-height: 12px;
+        line-height: 1;
         text-align: left;
         padding-bottom: 10px;
 
@@ -149,39 +166,9 @@ img {
             font-size: 16px;
             line-height: 1.2;
         }
-
-        @media screen and (max-width: $ver-mobile) {
-            font-size: 16px;
-            line-height: 1.2;
-        }
     }
 
-    &_tab {
-        min-width: 180px;
-        min-height: 30px;
-        display: flex;
-        align-items: center;
-        background: #F8F8F8;
-        border-radius: 3px;
-        border: 1px solid #DDDDDD;
-        outline: none;
-
-        @media screen and (max-width: $ver-tablet) {
-            font-size: 14px;
-            min-height: 40px;
-            padding: 0 10px;
-        }
-
-        @media screen and (max-width: $hor-mobile) {
-            line-height: 1.2;
-            min-height: 60px;
-        }
-
-        @media screen and (max-width: $ver-mobile) {
-            line-height: 1.2;
-            min-height: 60px;
-        }
-    }
+    
 
     &_info_text {
         display: flex;
@@ -199,7 +186,7 @@ img {
         &_title {
             font-size: 14px;
             font-weight: 600;
-            line-height: 14px;
+            line-height: 1;
             text-align: left;
             margin-bottom: 12px;
 
@@ -214,7 +201,6 @@ img {
 
             @media screen and (max-width: $ver-mobile) {
                 font-size: 16px;
-                line-height: 1.2;
             }
         }
     }
@@ -228,7 +214,7 @@ img {
 
     @media screen and (max-width: $hor-mobile) {
         gap: 20px;
-        padding: 20px 10px ;
+        padding: 20px 10px;
     }
 }
 
@@ -240,7 +226,7 @@ img {
     flex-direction: column;
     align-items: center;
     width: auto; 
-    height: auto; 
+    height: auto;
 
     &_title {
         display: flex;
@@ -252,19 +238,13 @@ img {
         &_text {
             font-size: 14px;
             font-weight: 600;
-            line-height: 14px;
+            line-height: 1;
             text-align: left;
             text-transform: uppercase;
 
             @media screen and (max-width: $ver-tablet) {
                 font-size: 18px;
                 line-height: 1.2;
-            }
-
-            @media screen and (max-width: $hor-mobile) {
-                font-size: 18px;
-                line-height: 1.2;
-                margin-bottom: 28px;
             }
         }
     }
@@ -305,7 +285,6 @@ img {
                 font-size: 16px;
                 line-height: 1.2;
                 width: 100%;
-                padding: 0 10px;
             }
         }
 
@@ -331,14 +310,14 @@ img {
     }
 
     @media screen and (max-width: $hor-mobile) {
-        padding:  20px 10px;
+        padding: 20px 10px;
     }
 }
 
 .calculation_text {
     font-size: 14px;
     font-weight: 400;
-    line-height: 14px;
+    line-height: 1;
     text-align: left;
 
     @media screen and (max-width: $ver-tablet) {
@@ -346,7 +325,6 @@ img {
     }
 
     @media screen and (max-width: $hor-mobile) {
-        font-size: 18px;
         line-height: 1.2;
     }
 
@@ -388,7 +366,7 @@ img {
         border: 1px solid #4D4C4C;
         font-size: 16px;
         font-weight: 400;
-        line-height: 16px;
+        line-height: 1;
         text-align: center;
         color: #4D4C4C;
         text-transform: uppercase;
@@ -417,21 +395,17 @@ img {
         @media screen and (max-width: $ver-tablet) {
             width: 100%;
             font-size: 18px;
-            line-height: 18px;
+            line-height: 1;
             padding-block: 20px;
         }
 
         @media screen and (max-width: $hor-mobile) {
             width: 100%;
-            font-size: 18px;
             line-height: 1.2;
-            padding-block: 22px;
         }
 
         @media screen and (max-width: $ver-mobile) {
             font-size: 16px;
-            line-height: 1.2px;
-            padding-block: 30px;
         }
     }
 
@@ -458,7 +432,6 @@ img {
 
     &_credit {
         display: none; 
-        gap: 65px;
         margin-bottom: 20px;
     }
 
@@ -477,10 +450,6 @@ img {
 .line {
     border: 1px solid #DDDDDD;
     margin-bottom: 20px;
-
-    @media screen and (max-width: $ver-tablet) {
-        margin-bottom: 20px;
-    }
 }
 
 .disclamer {
@@ -489,18 +458,4 @@ img {
     line-height: 1.1;
     opacity: 0.5;
     text-align: left;
-
-    @media screen and (max-width: $ver-tablet) {
-        font-size: 12px;
-    }
-
-    @media screen and (max-width: $hor-mobile) {
-        font-size: 12px;
-        line-height: 1.2;
-    }
-
-    @media screen and (max-width: $ver-mobile) {
-        font-size: 12px;
-        line-height: 1.2;
-    }
 }

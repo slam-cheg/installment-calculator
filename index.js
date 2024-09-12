@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const optionsTemplate = document.querySelector("#option-template").content;
 	const motoPrice = document.querySelector("#moto-price").querySelector("span");
 	const installmentTotal = document.querySelector("#installment-total").querySelector("span");
+	const installmentSumTitle = document.querySelector("#installment-sum-title");
 	const monthlyPayment = document.querySelector("#monthly-payment").querySelector("span");
 	const firstPayment = document.querySelector("#first-payment").querySelector("span");
 	const installmentForm = document.querySelector("#installment-form");
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const syntheticForms = document.querySelectorAll(".uc-synthetic-form");
 	const kaskoInput = document.querySelector(".kasko_input_text");
 	const kaskoPrice = document.querySelector("#kaskoPrice");
-	let mskForm, spbForm, ekbForm, nnForm, ksdForm, rstForm, schForm, kmrForm, tmsForm;
+	let mskForm, spbForm, ekbForm, nnForm, ksdForm, rstForm, schForm, kmrForm, tmsForm, testForm;
 
 	syntheticForms.forEach((form) => {
 		switch (form.querySelector(".t-form__inputsbox").querySelector(".t-text").textContent) {
@@ -58,12 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			case "TOMSK":
 				tmsForm = form;
 				break;
+			case "TEST":
+				testForm = form;
+				break;
 		}
 	});
 
-	//console.log(mskForm, spbForm, ekbForm, nnForm, ksdForm, rstForm, schForm, kmrForm, tmsForm)
-
-	fakeFormButton.addEventListener("click", submitToRightForm);
+	fakeFormButton.addEventListener("click", createSubmitData);
 	installmentDuration.addEventListener("change", countInstallment);
 	installmentFirstPay.addEventListener("change", countInstallment);
 	creditDuration.addEventListener("change", countCredit);
@@ -89,18 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	buttons.forEach((button) => {
-		button.addEventListener("click", () => {
-			changeTabs(button);
+		button.addEventListener("click", ()=>{
+			changeTabs(button)
 		});
 	});
-
+	
 	function changeTabs(button) {
-		buttons.forEach((btn) => {
-			btn.classList.remove("active");
-		});
+	    buttons.forEach((btn) => {
+	        btn.classList.remove("active");
+	    })
 		button.classList.add("active");
 		if (button.id === "credit-tab") {
-			formCredit.classList.add("form_active");
+		    formCredit.classList.add("form_active");
 			formInstallment.classList.remove("form_active");
 			countCredit();
 		} else {
@@ -110,19 +112,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	function submitToRightForm() {
+	function createSubmitData() {
+	    debugger
 		const submitData = {
 			phone: "",
 			name: "",
 			city: "",
 			motoType: "",
 			motoModel: "",
+			motoPrice: "",
 			motoColor: "",
 			creditOrInstallment: "",
 			duration: "",
 			firstPay: "",
 			kasko: "",
-			kreditSum: "",
+			creditSum: "",
 			monyhlyPayment: "",
 		};
 
@@ -135,9 +139,116 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 		submitData.city = fakeFormSelect.value;
+		submitData.motoType = selectType.value;
+		submitData.motoModel = selectModel.value;
+		submitData.motoColor = selectColor.value;
+		submitData.motoPrice = `${motoPrice.textContent} руб.`;
+		submitData.creditOrInstallment = buttons[0].classList.contains("active") ? "Рассрочка" : "Кредит";
+		submitData.duration = `${buttons[0].classList.contains("active") ? installmentDuration.value : creditDuration.value} мес.`;
+		submitData.firstPay = `${firstPayment.textContent} руб.`;
+		if(kaskoInput.value === "") {
+			submitData.kasko = "0 руб.";
+		} else {
+			submitData.kasko = `${kaskoInput.value} руб`;
+		}
+		submitData.kreditSum =  `${installmentTotal.textContent} руб.`;
+		submitData.monyhlyPayment = monthlyPayment.textContent;
+		
+		switch (submitData.city) {
+		    case "ЕКАТЕРИНБУРГ": 
+		        submitToRightForm(ekbForm, submitData);
+		        break;
+		    case "КАЗАНЬ": 
+		        submitToRightForm(ekbForm, submitData);
+		        break;
+		    case "КЕМЕРОВО": 
+		        submitToRightForm(kmrForm, submitData);
+		        break;
+		    case "КРАСНОДАР": 
+		        submitToRightForm(ksdForm, submitData);
+		        break;
+		    case "КРАСНОЯРСК": 
+		        submitToRightForm(ekbForm, submitData);
+		        break;
+		    case "МОСКВА": 
+		        submitToRightForm(mskForm, submitData);
+		        break;
+		    case "НИЖНИЙ НОВГОРОД": 
+		        submitToRightForm(nnForm, submitData);
+		        break;
+		    case "НОВОСИБИРСК": 
+		        submitToRightForm(ekbForm, submitData);
+		        break;
+		    case "РОСТОВ-НА-ДОНУ": 
+		        submitToRightForm(rstForm, submitData);
+		        break;
+		    case "САМАРА": 
+		        submitToRightForm(ekbForm, submitData);
+		        break;
+		    case "САНКТ-ПЕТЕРБУРГ": 
+		        submitToRightForm(spbForm, submitData);
+		        break;
+		    case "СОЧИ": 
+		        submitToRightForm(schForm, submitData);
+		        break;
+		    case "ТОМСК": 
+		        submitToRightForm(tmsForm, submitData);
+		        break;
+		    case "TEST": 
+		        submitToRightForm(testForm, submitData);
+		        break;
+		}
 
 		console.log(submitData);
 	}
+	
+	function submitToRightForm(form, submitData) {
+	    if(submitData.city !== "TEST") {
+	        return;
+	    }
+	    const allInputs = form.querySelectorAll(".t-input");
+	    const formButton = form.querySelector(".t-submit");
+	    allInputs.forEach(input => {
+	        if(input.name === "name") {
+	            input.value = submitData.name;
+	        }
+	        if(input.name === "tel") {
+	            input.value = submitData.phone;
+	        }
+	        if(input.name === "city") {
+	            input.value = submitData.city;
+	        }
+	        if(input.name === "type") {
+	            input.value = submitData.motoType;
+	        }
+	        if(input.name === "model") {
+	            input.value = submitData.motoModel;
+	        }
+	        if(input.name === "color") {
+	            input.value = submitData.motoColor;
+	        }
+	        if(input.name === "installment") {
+	            input.value = submitData.creditOrInstallmente;
+	        }
+	        if(input.name === "months") {
+	            input.value = submitData.duration;
+	        }
+	        if(input.name === "first-pay") {
+	            input.value = submitData.firstPay;
+	        }
+	        if(input.name === "motoPrice") {
+	            input.value = submitData.motoPrice;
+	        }
+	        if(input.name === "monthlyPayment") {
+	            input.value = submitData.monthlyPayment;
+	        }
+	        if(input.name === "installmentSum") {
+	            input.value = submitData.creditSum;
+	        }
+	    })
+	    formButton.click();
+	}
+	
 
 	function countKasko() {
 		const driveExpirience = Number(kaskoInput.value);
@@ -180,11 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			installmentTotal.textContent = installment.toLocaleString("ru-RU");
 			firstPayment.textContent = firstPay.toLocaleString("ru-RU");
 			monthlyPayment.textContent = monthly.toLocaleString("ru-RU");
+		    installmentSumTitle.textContent = "Сумма рассрочки";
 		}
 	}
 
 	function countCredit() {
-		console.log("Count credit");
 		const creditDurationValue = Number(creditDuration.value);
 		const creditFirstPayValue = Math.ceil((Number(motoPrice.textContent.replace(/\D/g, "")) * Number(creditFirstPay.value)) / 100);
 		const creditPreSum = Math.ceil(Number(motoPrice.textContent.replace(/\D/g, "")) - Number(creditFirstPayValue));
@@ -203,6 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			installmentTotal.textContent = creditSum.toLocaleString("ru-RU");
 			firstPayment.textContent = creditFirstPayValue.toLocaleString("ru-RU");
 			monthlyPayment.textContent = mintlyCreditPayment.toLocaleString("ru-RU");
+		    installmentSumTitle.textContent = "Сумма кредита";
 		}
 	}
 
